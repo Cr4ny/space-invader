@@ -33,7 +33,7 @@ public class InputHandler {
         }
     }
 
-    public void onKeyReleased(KeyCode keyCode) {
+    /*public void onKeyReleased(KeyCode keyCode) {
         if (keyCode == KeyCode.LEFT) {
             model.getPlayer().stopMovingLeft();
         }
@@ -46,7 +46,7 @@ public class InputHandler {
         else if (keyCode == KeyCode.DOWN) {
             model.getPlayer().stopMovingDown();
         }
-    }
+    }*/
 
     public void onMouseClicked(double x, double y) {
 

@@ -39,12 +39,12 @@ public class Game extends Application {
                 inputHandler.onKeyPressed(keyEvent.getCode());
             }
         });
-        scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+        /*scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
                 inputHandler.onKeyReleased(keyEvent.getCode());
             }
-        });
+        });*/
         canvas.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
