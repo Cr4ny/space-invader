@@ -1,5 +1,6 @@
 package com.brightstraining.javafxgame;
 
+import com.brightstraining.javafxgame.model.Food;
 import com.brightstraining.javafxgame.model.Model;
 import com.brightstraining.javafxgame.model.Player;
 import javafx.scene.canvas.Canvas;
@@ -33,10 +34,17 @@ public class Graphics {
         context.setFill(Color.GRAY);
         context.fillRect(0, Graphics.HEIGHT - 5, Graphics.WIDTH, Graphics.HEIGHT);
 
+        //draw food
+        Food food = model.getFood ();
+        context.setFill (Color.RED);
+        context.fillOval (food.getX ()-Food.WIDTH*SCALING/2,
+                food.getY() - Food.HEIGHT * SCALING / 2, Food.WIDTH, Food.HEIGHT);
+
         // draw player
         Player player = model.getPlayer();
         context.setFill(Color.BLUEVIOLET);
-        context.fillRect(player.getX() - Player.WIDTH * SCALING / 2, player.getY() - Player.HEIGHT * SCALING / 2, Player.WIDTH, Player.HEIGHT);
+        context.fillRect(player.getX() - Player.WIDTH * SCALING / 2,
+                player.getY() - Player.HEIGHT * SCALING / 2, Player.WIDTH, Player.HEIGHT);
         //context.fillPolygon(new double[] {player.getX() - Player.WIDTH * SCALING / 2}, new double[]{player.getY() -Player.HEIGHT * SCALING / 2}, (int) Player.WIDTH);
 
         /*context.fillOval(
@@ -45,8 +53,5 @@ public class Graphics {
                 Player.WIDTH,
                 Player.HEIGHT
         );*/
-
-
-
     }
 }
