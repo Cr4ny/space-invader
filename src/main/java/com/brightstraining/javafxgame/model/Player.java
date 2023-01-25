@@ -50,7 +50,7 @@ public class Player {
         x += speedX * milliseconds;
         y += speedY * milliseconds;
 
-        if (y > GROUND_Y) {
+        /*if (y > GROUND_Y) {
             // hit ground
             y = GROUND_Y;
             speedY = 0;
@@ -58,15 +58,39 @@ public class Player {
         else {
             // player is in the air, accelerate towards ground
             speedY += milliseconds * 0.000000002;
-        }
+        }*/
 
         if (x < Player.WIDTH / 2) {
             // hit left edge
-            x = Player.WIDTH / 2;
+            x = Model.WIDTH - Player.WIDTH / 2;
         }
         else if(x > Model.WIDTH - Player.WIDTH / 2) {
             // hit right edge
-            x = Model.WIDTH - Player.WIDTH / 2;
+            x = Player.WIDTH / 2;
+        }else if(y < Player.HEIGHT / 2) {
+            // hit top
+            y = GROUND_Y;
+        }
+        else if(y > GROUND_Y) {
+            // hit bottom
+            y = Player.HEIGHT / 2;
         }
     }
+
+    public void stopMovingDown() {
+        if (speedY > 0) {
+            speedY = 0;
+        }
+    }
+
+    public void stopMovingUp() {
+        if (speedY < 0) {
+            speedY = 0;
+        }
+    }
+
+    public void startMovingDown() {this.speedY = 0.0003; }
+
+    public void startMovingUp() { speedY = -0.0003;}
+
 }

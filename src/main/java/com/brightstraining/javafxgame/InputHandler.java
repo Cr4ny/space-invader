@@ -18,8 +18,10 @@ public class InputHandler {
         else if (keyCode == KeyCode.RIGHT) {
             model.getPlayer().startMovingRight();
         }
-        else if(keyCode == KeyCode.SPACE) {
-            model.getPlayer().jump();
+        else if(keyCode == KeyCode.UP) {
+            model.getPlayer().startMovingUp();
+        }else if(keyCode == KeyCode.DOWN) {
+            model.getPlayer().startMovingDown();
         }
     }
 
@@ -29,6 +31,12 @@ public class InputHandler {
         }
         else if (keyCode == KeyCode.RIGHT) {
             model.getPlayer().stopMovingRight();
+        }
+        else if (keyCode == KeyCode.UP) {
+            model.getPlayer().stopMovingUp();
+        }
+        else if (keyCode == KeyCode.DOWN) {
+            model.getPlayer().stopMovingDown();
         }
     }
 

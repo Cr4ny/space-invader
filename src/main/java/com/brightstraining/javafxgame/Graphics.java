@@ -1,12 +1,9 @@
 package com.brightstraining.javafxgame;
 
-import com.brightstraining.javafxgame.model.Enemy;
 import com.brightstraining.javafxgame.model.Model;
 import com.brightstraining.javafxgame.model.Player;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
 public class Graphics {
@@ -49,15 +46,7 @@ public class Graphics {
                 Player.HEIGHT
         );*/
 
-        //draw enemy
-        Enemy enemy = model.getEnemy();
-        context.setFill(Color.GREEN);
-        context.fillRect(
-                enemy.getX() - Enemy.WIDTH * SCALING / 2,
-                enemy.getY() - Enemy.HEIGHT * SCALING / 2,
-                Enemy.WIDTH,
-                Enemy.HEIGHT
-        );
+
 
     }
 }
